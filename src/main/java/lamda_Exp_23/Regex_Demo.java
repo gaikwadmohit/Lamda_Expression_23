@@ -13,6 +13,8 @@ public class Regex_Demo {
 	        regexDemo.firstName();
 	        System.out.println("Enter last name");
 	        regexDemo.lastName();
+	        System.out.println("Enter email");
+	        regexDemo.email();
 	}
 
 	public void firstName() {
@@ -37,4 +39,17 @@ public class Regex_Demo {
 	            System.out.println("Invalid");
 	        }
 	    }
+
+	    public void email() {
+	        String input = sc.next();
+	        String regex = "^[a-z0-9]+([_+-.][0-9a-z]+)*@[a-z]+.[a-z]{2,3}+.([a-z]{2,3})$";
+	        Pattern pattern = Pattern.compile(regex);
+	        Matcher matcher = pattern.matcher(input);
+	        if (matcher.matches()) {
+	            System.out.println("Valid");
+	        } else {
+	            System.out.println("Invalid");
+	        }
+	    }
+
 }
