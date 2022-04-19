@@ -21,6 +21,8 @@ public class Regex_Demo {
 	        regexDemo.password();
 	        System.out.println("Passward with 1 Uppercase");
 	        regexDemo.PasswardWith1Uppercase();
+	        System.out.println("Passward with 1 Numeric");
+	        regexDemo.PasswardWith1Numeric();
 	}
 
 	public void firstName() {
@@ -98,7 +100,23 @@ public class Regex_Demo {
 			System.out.println();
 
 		}
-		
+	    public void PasswardWith1Numeric() {
+
+			// scanning
+			String line = "Abcdefoo123";
+			String pattern = "^[A-Z]{1}[a-z][0-9]$";
+
+			// Create pattern object
+			Pattern pat = Pattern.compile(pattern);
+
+			// matching object create
+			Matcher mat = pat.matcher(line);
+
+			// Check Matching or not
+			boolean result6 = mat.matches();
+			System.out.println("passward with Numeric Number Matching result is " + result6);
+			System.out.println();
+		}
 	
 
 }
