@@ -17,6 +17,8 @@ public class Regex_Demo {
 	        regexDemo.email();
 	        System.out.println("Enter mobile number");
 	        regexDemo.phoneNumber();
+	        System.out.println("Enter password");
+	        regexDemo.password();
 	}
 
 	public void firstName() {
@@ -64,5 +66,18 @@ public class Regex_Demo {
 	            System.out.println("Invalid");
 	        }
 	    }
+
+	    public void password() {
+	        String input = sc.next();
+	        String regex = "^(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{8,}$";
+	        Pattern pattern = Pattern.compile(regex);
+	        Matcher matcher = pattern.matcher(input);
+	        if (matcher.matches()) {
+	            System.out.println("Valid");
+	        } else {
+	            System.out.println("Invalid");
+	        }
+	    }
+	
 
 }
