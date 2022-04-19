@@ -23,7 +23,9 @@ public class Regex_Demo {
 	        regexDemo.PasswardWith1Uppercase();
 	        System.out.println("Passward with 1 Numeric");
 	        regexDemo.PasswardWith1Numeric();
-	}
+	        System.out.println("Passward with 1 Special Character");
+	        regexDemo.PasswardWith1_Special_Character();
+		}
 
 	public void firstName() {
 		String input = sc.next();
@@ -118,5 +120,21 @@ public class Regex_Demo {
 			System.out.println();
 		}
 	
+	    public void PasswardWith1_Special_Character() {
 
+			// scanning
+			String line = "Abcdefoo@123";
+			String pattern = "^[A-Z]{1}[a-z][@][0-9]$";
+
+			// Create pattern object
+			Pattern pat = Pattern.compile(pattern);
+
+			// matching object create
+			Matcher mat = pat.matcher(line);
+
+			// Check Matching or not
+			boolean result7 = mat.matches();
+			System.out.println("passward with 1 Special Character Matching result is " + result7);
+			System.out.println();
+		}
 }
