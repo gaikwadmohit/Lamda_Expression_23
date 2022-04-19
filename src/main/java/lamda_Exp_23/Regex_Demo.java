@@ -19,6 +19,8 @@ public class Regex_Demo {
 	        regexDemo.phoneNumber();
 	        System.out.println("Enter password");
 	        regexDemo.password();
+	        System.out.println("Passward with 1 Uppercase");
+	        regexDemo.PasswardWith1Uppercase();
 	}
 
 	public void firstName() {
@@ -78,6 +80,25 @@ public class Regex_Demo {
 	            System.out.println("Invalid");
 	        }
 	    }
+	    public void PasswardWith1Uppercase() {
+
+			// scanning
+			String line = "Abcdefoo";
+			String pattern = "^[A-Z]{1}[a-z]*";
+
+			// Create pattern object
+			Pattern pat = Pattern.compile(pattern);
+
+			// matching object create
+			Matcher mat = pat.matcher(line);
+
+			// Check Matching or not
+			boolean result5 = mat.matches();
+			System.out.println("passward with one U/C Matching result is " + result5);
+			System.out.println();
+
+		}
+		
 	
 
 }
