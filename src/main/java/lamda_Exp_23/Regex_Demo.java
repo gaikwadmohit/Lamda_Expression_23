@@ -9,8 +9,10 @@ public class Regex_Demo {
 
 	public static void main(String[] args) {
 		Regex_Demo regexDemo = new Regex_Demo();
-		System.out.println("Enter first name");
-		regexDemo.firstName();
+	        System.out.println("Enter first name");
+	        regexDemo.firstName();
+	        System.out.println("Enter last name");
+	        regexDemo.lastName();
 	}
 
 	public void firstName() {
@@ -24,4 +26,15 @@ public class Regex_Demo {
 			System.out.println("Invalid");
 		}
 	}
+	  public void lastName() {
+	        String input = sc.next();
+	        String regex = "^[a-zA-Z]*$";
+	        Pattern pattern = Pattern.compile(regex);
+	        Matcher matcher = pattern.matcher(input);
+	        if (matcher.matches()) {
+	            System.out.println("Valid");
+	        } else {
+	            System.out.println("Invalid");
+	        }
+	    }
 }
